@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "16174212859",
+    "firebase_url": "https://agenda-6b7f3-default-rtdb.firebaseio.com",
+    "project_id": "agenda-6b7f3",
+    "storage_bucket": "agenda-6b7f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:16174212859:android:d9d82cf0399b0f5417725e",
+        "android_client_info": {
+          "package_name": "br.edu.ifsp.scl.ads.s5.pdm.agenda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16174212859-hfuked23g72i831moehu2ofpsrnupijs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhxe-wJWVy5VTmCbTDjwCPf__f1Ycp8gs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16174212859-hfuked23g72i831moehu2ofpsrnupijs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
