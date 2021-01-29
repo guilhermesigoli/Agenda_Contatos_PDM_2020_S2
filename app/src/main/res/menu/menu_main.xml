@@ -6,4 +6,9 @@
         android:title="Novo Contato"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/sairMi"
+        android:title="Sair"
+        app:showAsAction="never" />
+
 </menu>

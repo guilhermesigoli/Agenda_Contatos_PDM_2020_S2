@@ -122,6 +122,10 @@ class MainActivity : AppCompatActivity(), OnContatoClickListener {
                 val novoContantoIntent = Intent(this, ContatoActivity::class.java)
                 startActivityForResult(novoContantoIntent, NOVO_CONTATO_REQUEST_CODE)
                 true
+            } else if (item.itemId == R.id.sairMi) {
+                AutenticadorFirebase.firebaseAuth.signOut()
+                startActivity(Intent(this, LoginActivity::class.java))
+                true
             }
             else
                 false

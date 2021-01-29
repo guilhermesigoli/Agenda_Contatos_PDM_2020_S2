@@ -1,5 +1,6 @@
 package br.edu.ifsp.scl.ads.s5.pdm.agenda.model
 
+import br.edu.ifsp.scl.ads.s5.pdm.agenda.adapter.AutenticadorFirebase
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -10,7 +11,8 @@ import com.google.firebase.ktx.Firebase
 class ContatoFirebase: ContatoDao {
     private val CONTATOS_LIST_REALTIME_DATABASE = "contatosList"
     // Referência para o nó principal que é a lista de contatos do RtDb
-    private val contatosListRtDb = Firebase.database.getReference(CONTATOS_LIST_REALTIME_DATABASE)
+    private val userId = AutenticadorFirebase.firebaseAuth.currentUser?.uid
+    private val contatosListRtDb = Firebase.database.getReference("users/$userId")
 
     private val contatosList: MutableList<Contato> = mutableListOf()
     init {
