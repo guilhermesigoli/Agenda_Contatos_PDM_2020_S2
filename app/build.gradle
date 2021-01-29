@@ -10,7 +10,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "br.edu.ifsp.scl.ads.s5.pdm.meuscontatos"
+        applicationId "br.edu.ifsp.scl.ads.s5.pdm.agenda"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
@@ -36,6 +36,10 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -57,4 +61,7 @@ dependencies {
     // Bill of Materials - Firebase
     implementation platform('com.google.firebase:firebase-bom:26.1.1')
     implementation "com.google.firebase:firebase-database-ktx:19.5.1"
+
+    // Autenticação do Firebase
+    implementation 'com.google.firebase:firebase-auth'
 }

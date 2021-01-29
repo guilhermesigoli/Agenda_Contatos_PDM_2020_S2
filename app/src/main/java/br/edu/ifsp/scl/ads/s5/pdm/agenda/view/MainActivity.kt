@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.edu.ifsp.scl.ads.s5.pdm.agenda.R
+import br.edu.ifsp.scl.ads.s5.pdm.agenda.adapter.AutenticadorFirebase
 import br.edu.ifsp.scl.ads.s5.pdm.agenda.adapter.ContatosAdapter
 import br.edu.ifsp.scl.ads.s5.pdm.agenda.adapter.OnContatoClickListener
 import br.edu.ifsp.scl.ads.s5.pdm.agenda.controller.ContatoController
@@ -38,6 +39,15 @@ class MainActivity : AppCompatActivity(), OnContatoClickListener {
 
     // Controller
     private lateinit var contatoController: ContatoController
+
+    override fun onStart() {
+        super.onStart()
+
+        val email = AutenticadorFirebase.firebaseAuth.currentUser?.email
+        if (email == null) {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,6 +121,10 @@ class MainActivity : AppCompatActivity(), OnContatoClickListener {
             if (item.itemId == R.id.novoContatoMi) {
                 val novoContantoIntent = Intent(this, ContatoActivity::class.java)
                 startActivityForResult(novoContantoIntent, NOVO_CONTATO_REQUEST_CODE)
+                true
+            } else if (item.itemId == R.id.sairMi) {
+                AutenticadorFirebase.firebaseAuth.signOut()
+                startActivity(Intent(this, LoginActivity::class.java))
                 true
             }
             else

@@ -1,5 +1,4 @@
 package br.edu.ifsp.scl.ads.s5.pdm.agenda.model
-import br.edu.ifsp.scl.ads.s5.pdm.agenda.model.Contato
 
 // Podemos usar qualquer implementação de persistência mas esse é o comportamento esperado
 interface ContatoDao {
